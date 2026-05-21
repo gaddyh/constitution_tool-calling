@@ -1,0 +1,83 @@
+{
+  "dataset_path": "data/generated.jsonl",
+  "constitution_path": "constitution.yaml",
+  "total_rows": 10,
+  "valid_rows": 10,
+  "invalid_rows": 0,
+  "valid_row_rate": 1.0,
+  "schema_error_rate": 0.0,
+  "constitutional_violation_rate": 0.0,
+  "duplicate_input_rate": 0.0,
+  "duplicate_input_groups": 0,
+  "ambiguity_density": 0.1,
+  "context_resolution_failure_rate": 0.0,
+  "invalid_followup_rate": 0.0,
+  "lexical_diversity": 0.4931506849315068,
+  "scenario_counts": {
+    "complete_tool_call": 4,
+    "missing_required_field": 3,
+    "context_resolves_field": 2,
+    "ambiguous_request": 1
+  },
+  "language_counts": {
+    "english": 10
+  },
+  "tool_counts": {
+    "create_task": 6,
+    "create_reminder": 5
+  },
+  "scenario_distribution_error": {
+    "ambiguous_request": {
+      "target": 0.1,
+      "observed": 0.1,
+      "error": 0.0,
+      "absolute_error": 0.0
+    },
+    "complete_tool_call": {
+      "target": 0.4,
+      "observed": 0.4,
+      "error": 0.0,
+      "absolute_error": 0.0
+    },
+    "context_resolves_field": {
+      "target": 0.2,
+      "observed": 0.2,
+      "error": 0.0,
+      "absolute_error": 0.0
+    },
+    "missing_required_field": {
+      "target": 0.3,
+      "observed": 0.3,
+      "error": 0.0,
+      "absolute_error": 0.0
+    }
+  },
+  "language_distribution_error": {
+    "english": {
+      "target": 0.8,
+      "observed": 1.0,
+      "error": 0.19999999999999996,
+      "absolute_error": 0.19999999999999996
+    },
+    "hebrew": {
+      "target": 0.2,
+      "observed": 0.0,
+      "error": -0.2,
+      "absolute_error": 0.2
+    }
+  },
+  "tool_distribution_error": {
+    "create_reminder": {
+      "target": 0.6,
+      "observed": 0.45454545454545453,
+      "error": -0.14545454545454545,
+      "absolute_error": 0.14545454545454545
+    },
+    "create_task": {
+      "target": 0.4,
+      "observed": 0.5454545454545454,
+      "error": 0.1454545454545454,
+      "absolute_error": 0.1454545454545454
+    }
+  }
+}

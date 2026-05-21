@@ -1,0 +1,59 @@
+name: constitutional_tool_calling_v0
+version: 0.1
+
+decision_space:
+  allowed_decisions:
+    - call_tool
+    - ask_followup
+    - no_action
+
+tools:
+  create_reminder:
+    required_fields:
+      - text
+      - time
+    optional_fields:
+      - priority
+    missing_required_policy: ask_followup
+    hallucination_policy: forbidden
+
+  create_task:
+    required_fields:
+      - text
+    optional_fields:
+      - due_date
+      - priority
+    missing_required_policy: ask_followup
+    hallucination_policy: forbidden
+
+policies:
+  ambiguity:
+    ambiguous_tool: ask_followup
+    ambiguous_required_field: ask_followup
+
+  context:
+    can_fill_required_fields: true
+    must_be_explicit: true
+
+  followup:
+    ask_only_for_missing_required_fields: true
+    max_questions: 2
+
+distributions:
+  scenarios:
+    complete_tool_call: 0.40
+    missing_required_field: 0.30
+    context_resolves_field: 0.20
+    ambiguous_request: 0.10
+
+  tools:
+    create_reminder: 0.60
+    create_task: 0.40
+
+  languages:
+    english: 0.80
+    hebrew: 0.20
+
+generation:
+  random_seed: 42
+  rows: 10
